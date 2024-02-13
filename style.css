@@ -44,7 +44,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
     transform: scale(0.90);
-    transition: transform 0.5s;
+    transition: transform 0.1s;
 }
 
 span {
@@ -64,13 +64,13 @@ span {
     font-size: 1.3rem;
     text-align: center;
     padding: 2rem;
-    border: var(--primary-color) solid 2px;
+    border: var(--secondary-color) solid 2px;
 }
 
 .linha {
     width: 90%;
     margin: 2rem auto;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--primary-color);
 
 }
 

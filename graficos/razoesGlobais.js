@@ -31,7 +31,7 @@ import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
         height:800,
         title: {
             text: 'Principais motivos de usar uma rede social',
-            x:0.02,
+            x:0,
             font: {
                 family: getCSS('--font'),
                 color: getCSS('--primary-color'),
