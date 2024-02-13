@@ -4,7 +4,6 @@ import { getCSS, criarGrafico, incluirTexto, incluirLinha, tickConfig } from "./
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/redes-favoritas.json'
     const res = await fetch(url)
     const dados = await res.json()
-    console.table(dados);
     const redes = Object.keys(dados);
     const valores = Object.values(dados);
 
@@ -30,12 +29,12 @@ import { getCSS, criarGrafico, incluirTexto, incluirLinha, tickConfig } from "./
                 size: 30
             }
         },
-    legend: {
-        font: {
-            color: getCSS('--primary-color'),
-            size: 16,
+        legend: {
+            font: {
+                color: getCSS('--primary-color'),
+                size: 16,
+            }
         }
-    }
 
     }
 
