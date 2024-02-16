@@ -1,26 +1,11 @@
-const scripts = [
-    "graficos/common.js",
-    "graficos/maisUsuarios.js" ,
-    "graficos/usuarios.js" ,
-    "graficos/razoesGlobais.js" ,
-    "graficos/redesFavoritas.js"
-]
+import { visualizarInformacoesGlobaisRedesSociais } from "./informacoesGlobais.js";
+import { redesComMaisUsuarios } from "./quantidadeUsuarios.js";
+import { motivos } from "./motivos.js";
+import { redesFavoritas } from "./redesFavoritas.js";
 
-function carrgarScript(nomeDoScript) {
-    return new Promise(( resolve) => {
-        const script = document.createElement('script')
-        script.src = nomeDoScript
-        script.type = 'module'; 
-        script.onload = resolve
-        document.head.appendChild(script)
-    })
-}
-
-async function main() {
-    for (const script of scripts) {
-        console.log(script);
-        await carrgarScript(script)
-    }
-}
-
-main()
+(function main() {
+    visualizarInformacoesGlobaisRedesSociais()
+    redesComMaisUsuarios()
+    motivos()
+    redesFavoritas()
+}) ()

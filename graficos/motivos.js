@@ -1,6 +1,6 @@
 import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
 
-( async function () {
+const motivos = async () => {
 
     const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/razoes-globais.json'
     const res = await fetch(url)
@@ -14,7 +14,7 @@ import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
             x: Array(motivos.length).fill(22),
             y: motivos,
             text: quantidades.map(q => `${q}%  `),
-            textfont: { color: getCSS('--background-color'), size:16},
+            textfont: { color: getCSS('--background-color'), size: 16 },
             orientation: 'h',
             marker: { color: getCSS('--primary-color') }
         },
@@ -28,10 +28,10 @@ import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
     ];
 
     const layout = {
-        height:800,
+        height: 800,
         title: {
             text: 'Principais motivos de usar uma rede social',
-            x:0,
+            x: 0,
             font: {
                 family: getCSS('--font'),
                 color: getCSS('--primary-color'),
@@ -60,6 +60,6 @@ import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
     const texto = `Aproximadamente <span>45%</span> das pessoas utilizam as redes sociais para contato ou preencher tempo livre ou buscar notícias sobre o que está acontecendo no mundo.`
 
     incluirTexto(texto)
+}
 
-
-}) ()
+export {motivos}

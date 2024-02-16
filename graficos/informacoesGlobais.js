@@ -2,7 +2,7 @@ import { incluirTexto } from "./common.js"
 
 const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-globais.json'
 
-async function redesComMaisUsuarios() {
+async function visualizarInformacoesGlobaisRedesSociais() {
     const res = await fetch(url)
     const dados = await res.json()
     const horas = parseInt(dados.tempo_medio)
@@ -21,4 +21,4 @@ async function redesComMaisUsuarios() {
     container.appendChild(paragrafo);
 }
 
-redesComMaisUsuarios()
+export {visualizarInformacoesGlobaisRedesSociais}
