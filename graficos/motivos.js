@@ -1,4 +1,4 @@
-import { getCSS, tickConfig, criarGrafico, incluirTexto } from "./common.js"
+import { getCSS, tickConfig, criarGrafico, incluirTexto, incluirLinha } from "./common.js"
 
 const motivos = async () => {
 
@@ -60,6 +60,7 @@ const motivos = async () => {
     const texto = `Aproximadamente <span>45%</span> das pessoas utilizam as redes sociais para contato ou preencher tempo livre ou buscar notícias sobre o que está acontecendo no mundo.`
 
     incluirTexto(texto)
+    incluirLinha()
 }
 
 export {motivos}

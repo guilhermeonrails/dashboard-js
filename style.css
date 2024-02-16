@@ -71,6 +71,7 @@ span {
     width: 90%;
     margin: 2rem auto;
     border: 2px solid var(--primary-color);
+    opacity: 0.5;
 
 }
 

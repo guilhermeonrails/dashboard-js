@@ -7,11 +7,11 @@ async function visualizarInformacoesGlobaisRedesSociais() {
     const dados = await res.json()
     const horas = parseInt(dados.tempo_medio)
     const minutos = Math.round((dados.tempo_medio - horas) * 100)
-    const pessoasConectadas = (dados.total_pessoas_conectadas / 1e9).toLocaleString('pt-BR')
+    const pessoasConectadas = (dados.total_pessoas_conectadas / 1e9)
     const pessoasNoMundo = dados.total_pessoas_mundo / 1e9
-    // const pessoasNaoConectadas = pessoasNoMundo - pessoasConectadas
+    const porcentagemConectada = ((pessoasConectadas / pessoasNoMundo) * 100).toFixed(2);
 
-    const texto = `Você sabia que o mundo tem <span>${pessoasNoMundo} bilhões</span> de pessoas e que aproximadamente <span>${pessoasConectadas} bilhões</span> delas estão em alguma rede social e passam em média <span>${horas} horas e ${minutos} minutos</span> conectadas diariamente?` + `<br>Isso significa que <span>63%</span> da população mundial está conectada em uma rede. <br>Este relatório tem como objetivo analisar as principais redes sociais e seu impacto no comportamento humano.`
+    const texto = `Você sabia que o mundo tem <span>${pessoasNoMundo} bilhões</span> de pessoas e que aproximadamente <span>${pessoasConectadas.toLocaleString('pt-BR')} bilhões</span> delas estão em alguma rede social e passam em média <span>${horas} horas e ${minutos} minutos</span> conectadas diariamente?` + `<br>Isso significa que <span>${porcentagemConectada}%</span> da população mundial está conectada em uma rede. <br>Este relatório tem como objetivo analisar as principais redes sociais e seu impacto no comportamento humano.`
     
 
     const container = document.getElementById('graficos-container');
